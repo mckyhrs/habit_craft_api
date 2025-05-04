@@ -331,10 +331,10 @@ DEPENDENCIES
   brakeman
   debug
   kamal
-  pg (~> 1.1)
-  puma (>= 5.0)
+  pg
+  puma
   rails (~> 8.0.2)
-  rspec-rails (~> 8.0)
+  rspec-rails
   rubocop-rails-omakase
   solid_cable
   solid_cache
