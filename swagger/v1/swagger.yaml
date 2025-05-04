@@ -1,0 +1,63 @@
+---
+openapi: 3.0.1
+info:
+  title: Habit Craft API
+  version: v1
+paths:
+  "/api/v1/habits":
+    get:
+      summary: 習慣の一覧を取得
+      tags:
+      - Habits
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    title:
+                      type: string
+                    description:
+                      type: string
+                    created_at:
+                      type: string
+                    updated_at:
+                      type: string
+                  required:
+                  - id
+                  - title
+                  - description
+    post:
+      summary: 習慣を更新
+      tags:
+      - Habits
+      parameters: []
+      responses:
+        '201':
+          description: created
+        '422':
+          description: invalid request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                habit:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    description:
+                      type: string
+                  required:
+                  - title
+servers:
+- url: http://localhost:3000
+  description: Local development server
